@@ -1,0 +1,4 @@
+warehouse_key,warehouse_name,city,capacity_units
+1,Karachi DC,Karachi,60000
+2,Lahore DC,Lahore,45000
+3,Islamabad DC,Islamabad,30000

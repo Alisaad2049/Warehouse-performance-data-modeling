@@ -1,0 +1,16 @@
+supplier_key,supplier_name,city,category
+1,Alpha Traders,Peshawar,Chemicals
+2,Bright Foods,Karachi,Food
+3,City Packaging,Karachi,Food
+4,Delta Electronics,Peshawar,Food
+5,Eagle Textiles,Islamabad,Electronics
+6,Fast Chemicals,Lahore,Electronics
+7,Global Plastics,Lahore,Packaging
+8,Habib Steel,Lahore,Packaging
+9,Indus Pharma,Peshawar,Food
+10,Jinnah Paper,Karachi,Packaging
+11,Kohat Cement,Peshawar,Electronics
+12,Lakson Goods,Peshawar,Pharma
+13,Metro Auto Parts,Multan,Pharma
+14,Noor Beverages,Karachi,Pharma
+15,Orient Tools,Multan,Packaging

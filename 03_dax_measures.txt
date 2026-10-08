@@ -1,0 +1,14 @@
+Total Shipments = COUNTROWS(fact_shipments)
+On-Time Shipments = CALCULATE([Total Shipments], FILTER(fact_shipments, fact_shipments[delivered_date] <= fact_shipments[promised_date]))
+On-Time % = DIVIDE([On-Time Shipments], [Total Shipments])
+Avg Lead Time (Days) = AVERAGEX(fact_shipments, DATEDIFF(fact_shipments[order_date], fact_shipments[delivered_date], DAY))
+Avg Dwell (Hours) = AVERAGEX(fact_shipments, DATEDIFF(fact_shipments[scan_in_time], fact_shipments[scan_out_time], MINUTE)/60)
+Units Dispatched = SUM(fact_shipments[qty_dispatched])
+Avg Stock = AVERAGE(fact_inventory_daily[stock_on_hand])
+Inventory Turnover = DIVIDE([Units Dispatched], [Avg Stock])
+Stockout Days = CALCULATE(COUNTROWS(fact_inventory_daily), fact_inventory_daily[stock_on_hand] = 0)
+
+Relationships (all many-to-one, single direction):
+fact_shipments[date_key] -> dim_date[date_key]   (mark dim_date as date table)
+fact_shipments[supplier_key] -> dim_supplier ; [sku_key] -> dim_sku ; [warehouse_key] -> dim_warehouse
+fact_inventory_daily[date_key/sku_key/warehouse_key] -> dim tables
